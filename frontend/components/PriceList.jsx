@@ -7,7 +7,7 @@ const PriceList = () => {
   useEffect(() => {
     const fetchPrices = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/priceList');
+        const response = await axios.get('http://localhost:3000/pricelist');
         setPrices(response.data);
       } catch (err) {
         console.error(err);

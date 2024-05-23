@@ -25,9 +25,9 @@ app.use(cors())
 app.use(express.json());
 
 // Endpoint för att hämta prislistan
-app.get('/priceList', async (req, res) => {
+app.get('/pricelist', async (req, res) => {
   try {
-    const result = await client.query('SELECT * FROM priceList');
+    const result = await client.query('SELECT * FROM pricelist');
     res.json(result.rows);
   } catch (err) {
     console.error(err.message);
