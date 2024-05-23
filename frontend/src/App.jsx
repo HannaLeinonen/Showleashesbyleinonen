@@ -1,18 +1,10 @@
-import { useEffect } from 'react'
-
 import './App.css'
+import PriceList from '../components/PriceList'
 
 function App() {
-    useEffect(() => {
-        fetch('/api')
-        .then((response) => response.json())
-        .then((result) => {
-            alert(`Hello ${result.hello}`)
-        })
-    })
   return (
     <>
-
+    <PriceList/>
     </>
   )
 }
