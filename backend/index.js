@@ -10,3 +10,7 @@ app.get('/api', (req, res) => {
 app.use(express.static(path.join(path.resolve(), 'dist')))
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+
+
+
