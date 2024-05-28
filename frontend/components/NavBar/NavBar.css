@@ -1,0 +1,52 @@
+/* Navbar */
+#root > div > nav, .navbar {
+    background-color: var(--four) !important;
+    height: 30vh;
+    transition: height 0.3s ease-in-out;
+    overflow-y: hidden;
+}
+
+
+#brandName > a {
+    color: var(--two);
+    text-decoration: none;
+    font-size: 2.5rem ;
+    font-family: "Dancing Script", cursive;
+}
+#brandName > a:hover {
+    color: var(--one);
+    transition: ease 0.4s;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 13vh;
+}
+
+.navbar-link {
+    color: var(--two);
+    font-size: 1.5rem;
+    margin-left: 2.2rem;
+    margin-right: 2.2rem;
+    text-decoration: none;
+}
+.navbar-link:hover {
+    color: var(--one);
+    transition: ease 0.4s;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        height: max-content;
+    }
+    .navbar-nav {
+        margin-top: 0;
+    }
+    #brandName > a {
+        font-size: 1.4rem;
+    }
+}
