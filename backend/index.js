@@ -19,13 +19,13 @@ client.connect(err => {
 });
 
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000;
 
 app.use(cors())
 app.use(express.json());
 
 // Endpoint för att hämta prislistan
-app.get('/pricelist', async (req, res) => {
+app.get('/api/pricelist', async (req, res) => {
   try {
     const result = await client.query('SELECT * FROM pricelist');
     res.json(result.rows);
