@@ -21,10 +21,11 @@ const GlobalStyle = createGlobalStyle`
       width: 100%;
       height: 100%;
       background-image: url('/img/annie-spratt-yI3weKNBRTc-unsplash.jpg');
+      background-color: #d5d2d2;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      opacity: 0.3; /* Justera opaciteten efter behov */
+      opacity: 0.3;
       z-index: -1;
 
     }
