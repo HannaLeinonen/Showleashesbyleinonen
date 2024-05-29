@@ -19,7 +19,7 @@ client.connect(err => {
 });
 
 const app = express()
-const port = process.env.PORT || 10000;
+const PORT = process.env.PORT || 10000;
 
 app.use(cors())
 app.use(express.json());
@@ -37,4 +37,4 @@ app.get('/api/pricelist', async (req, res) => {
 
 app.use(express.static(path.join(path.resolve(), 'dist')))
 
-app.listen(port, () => console.log(`Server is running on port ${port}`))
+app.listen(PORT, () => console.log(`Server is running on port ${port}`))
