@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import ImageGallery from '../components/ImageGallery';
 
 const HomeContainer = styled.div`
   margin: 0;
@@ -93,50 +94,7 @@ const FlexItem = styled.div`
 
 `;
 
-const ImageGalleryContainer = styled.div`
-    margin-top: 30vh;
-    margin-bottom: 30vh;
-    text-align: center;
-    background-color: var(--four);
-    color: var(--one);
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-`
-const ImageGallery = styled.div`
-    display: flex;
-    justify-content: space-around;
-    align-items:center;
-    width: 90%;
-    margin: 0 auto;
-    margin-top: 2rem;
 
-
-    figure.card {
-        display: grid;
-        grid-template: minmax(0, 1fr) / (0, 1fr);
-        grid-template-areas: "stack";
-    }
-    figure.card > img {
-        grid-area: stack;
-        object-fit: cover;
-        place-self: stretch;
-    }
-    figure.card > figcaption {
-        grid-area: stack;
-        align-self: end;
-        justify-self: stretch;
-
-        background-color: #27273980;
-        color: var(--two);
-
-        text-align: end;
-        padding: 12px;
-        backdrop-filter: blur(6px);
-    }
-    @media only screen and (max-width: 768px) {
-        flex-wrap: wrap;
-    }
-`
 
 function Home() {
   return (
@@ -165,27 +123,7 @@ function Home() {
                     </button>
                 </FlexItem>
             </FlexContainer>
-            <ImageGalleryContainer>
-                <h1>Exempel på olika färg- och pärlkombinationer</h1>
-                <ImageGallery>
-                    <figure className='card'>
-                    <img src="img\blått-koppel-400px.jpg" alt="" />
-                    <figcaption>Blue & White</figcaption>
-                    </figure>
-                    <figure className='card'>
-                    <img src="img\blått-koppel-400px.jpg" alt="" />
-                    <figcaption>Blue & White</figcaption>
-                    </figure>
-                    <figure className='card'>
-                    <img src="img\blått-koppel-400px.jpg" alt="" />
-                    <figcaption>Blue & White</figcaption>
-                    </figure>
-                    <figure className='card'>
-                    <img src="img\blått-koppel-400px.jpg" alt="" />
-                    <figcaption>Blue & White</figcaption>
-                    </figure>
-                </ImageGallery>
-            </ImageGalleryContainer>
+            <ImageGallery/>
             <HeroHeading>
                 <h1>Matcha ditt koppel med ett snyggt halsband!</h1>
                 <p>

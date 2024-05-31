@@ -24,8 +24,21 @@ const app = express()
 app.use(cors())
 app.use(express.json());
 
+app.post('/contact', async (req, res) => {
+    const { firstName, lastName, email, message } = req.body
+
+    try {
+        const result = await client.query('INSERT INTO contact (first_name, last_name, email, message) VALUES ($1, $2, $3, $4) RETURNING *', [firstName, lastName, email, message]);
+        res.status(201).send('201 created');
+
+    }catch (error) {
+        console.error(error.message);
+        res.status(500).send('Server error');
+    }
+});
+
 // Endpoint för att hämta prislistan
-app.get('/api/pricelist', async (req, res) => {
+app.get('/pricelist', async (req, res) => {
   try {
     const result = await client.query('SELECT * FROM pricelist');
     res.json(result.rows);

@@ -25,6 +25,11 @@ const FooterContainer = styled.footer`
         color: var(--two);
         border-radius: 5px;
         text-decoration: none;
+
+        &:hover {
+            color: var(--three);
+            border: 1px solid var(--three);
+        }
     }
 `
 const CopyWriteSymbol = styled.div`
@@ -49,7 +54,8 @@ const SocialMediaLinks = styled.div`
         text-decoration: none;
 
         &:hover {
-            color: var(--hover-color);
+            transition: ease 0.4s;
+            color: var(--three);
         }
     }
 `
@@ -65,12 +71,12 @@ function Footer() {
             <SocialMediaLinks>
                 <ul className="flex-container">
                     <li>
-                        <a href="#" className="link">
+                        <a href="https://www.facebook.com/showleashesbyleinonen#" className="link" target="_blank" rel="noopener noreferrer">
                             <i className="bi bi-facebook"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="#" className="link">
+                        <a href="https://www.instagram.com/showleashesbyleinonen/" className="link" target="_blank" rel="noopener noreferrer">
                             <i className="bi bi-instagram"></i>
                         </a>
                     </li>
