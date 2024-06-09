@@ -30,6 +30,7 @@ const FooterContainer = styled.footer`
         &:hover {
             color: var(--one);
             border: 1px solid var(--three);
+            transition: ease 0.4s;
         }
     }
 `

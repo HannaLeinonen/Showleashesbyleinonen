@@ -135,6 +135,14 @@ const FlexItem = styled.div`
     button {
         margin: 1rem;
         border-radius: 5px;
+        color: var(--two);
+        border: 1px solid var(--four);
+
+        &:hover {
+        color: var(--one);
+        border: 1px solid var(--one);
+        transition: ease 0.4s;
+    }
     }
     @media only screen and (max-width: 768px) {
         width: 130vw;

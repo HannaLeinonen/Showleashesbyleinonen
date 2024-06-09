@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import styled from 'styled-components'
-import axios from 'axios';
+import axios from 'axios'
 import Modal from './Modal.jsx'
 
 // Validation with Yup
@@ -40,7 +40,6 @@ const StyledForm = styled(Form)`
     border-radius: 10px;
     background-color: #f9f9f950;
 
-
     @media only screen and (max-width: 768px) {
         width: 95vw;
     }
@@ -76,13 +75,15 @@ const StyledButton = styled.button`
     padding: 10px 15px;
     margin-top: 20px;
     background-color: var(--four);
-    color: white;
+    color: var(--two);
     border: none;
     border-radius: 5px;
     cursor: pointer;
 
     &:hover {
-        background-color: #0056b3;
+        color: var(--one);
+        border: 1px solid var(--one);
+        transition: ease 0.4s;
     }
 
     &:disabled {
@@ -92,8 +93,8 @@ const StyledButton = styled.button`
 `
 
 const ContactForm = () => {
-    const [isModalOpen, setModalOpen] = useState(false);
-    const [modalMessage, setModalMessage] = useState('');
+    const [isModalOpen, setModalOpen] = useState(false)
+    const [modalMessage, setModalMessage] = useState('')
     return (
         <Container>
             <h1>
@@ -108,11 +109,13 @@ const ContactForm = () => {
                 }}
                 validationSchema={validationSchema}
                 onSubmit={async (values, { setSubmitting, resetForm }) => {
-
                     console.log(values)
 
                     try {
-                        const response = await axios.post('http://localhost:10000/contact', values);
+                        const response = await axios.post(
+                            'http://localhost:10000/contact',
+                            values
+                        )
                         console.log('Message sent: ', response)
                         setModalMessage('Ditt meddelande har mottagits!')
                         setModalOpen(true)
@@ -164,7 +167,12 @@ const ContactForm = () => {
                 )}
             </Formik>
 
-            {isModalOpen && <Modal message={modalMessage} onClose={() => setModalOpen(false)} />}
+            {isModalOpen && (
+                <Modal
+                    message={modalMessage}
+                    onClose={() => setModalOpen(false)}
+                />
+            )}
         </Container>
     )
 }
