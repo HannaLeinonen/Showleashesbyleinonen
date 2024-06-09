@@ -35,6 +35,7 @@ function NavBar() {
                     <Navbar.Toggle
                         onClick={toggleNavbar}
                         aria-controls="responsive-navbar-nav"
+                        className="custom-toggler"
                     />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto">

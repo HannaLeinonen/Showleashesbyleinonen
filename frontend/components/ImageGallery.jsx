@@ -12,6 +12,10 @@ const ImageGalleryContainer = styled.div`
     h1 {
         overflow-y: hidden;
     }
+
+    @media only screen and (max-width: 768px) {
+        margin-top: 15vh;
+    }
 `
 const ImageGalleryCards = styled.div`
     display: flex;
@@ -39,8 +43,8 @@ const ImageGalleryCards = styled.div`
         background-color: #27273980;
         color: var(--two);
 
-        text-align: end;
-        padding: 12px;
+        text-align: center;
+        padding: 8px;
         backdrop-filter: blur(6px);
     }
     @media only screen and (max-width: 768px) {
@@ -49,29 +53,27 @@ const ImageGalleryCards = styled.div`
 `
 function ImageGallery() {
     return (
-        <div>
-            <ImageGalleryContainer>
-                <h1>Exempel på olika färg- och pärlkombinationer</h1>
-                <ImageGalleryCards>
-                    <figure className="card">
-                        <img src="img\blått-koppel-400px.jpg" alt="" />
-                        <figcaption>Blue & White</figcaption>
-                    </figure>
-                    <figure className="card">
-                        <img src="img\blått-koppel-400px.jpg" alt="" />
-                        <figcaption>Blue & White</figcaption>
-                    </figure>
-                    <figure className="card">
-                        <img src="img\blått-koppel-400px.jpg" alt="" />
-                        <figcaption>Blue & White</figcaption>
-                    </figure>
-                    <figure className="card">
-                        <img src="img\blått-koppel-400px.jpg" alt="" />
-                        <figcaption>Blue & White</figcaption>
-                    </figure>
-                </ImageGalleryCards>
-            </ImageGalleryContainer>
-        </div>
+        <ImageGalleryContainer>
+            <h1>Exempel på olika färg- och pärlkombinationer</h1>
+            <ImageGalleryCards>
+                <figure className="card">
+                    <img src="img\blått-koppel-250px.jpg" alt="" />
+                    <figcaption>Blue & White</figcaption>
+                </figure>
+                <figure className="card">
+                    <img src="img\lila-koppel-250px.JPG" alt="" />
+                    <figcaption>Purple & Rosegold</figcaption>
+                </figure>
+                <figure className="card">
+                    <img src="img\coppar-svart-koppel-250px.JPG" alt="" />
+                    <figcaption>Copper & Black</figcaption>
+                </figure>
+                <figure className="card">
+                    <img src="img\svart-koppel-250px.jpg" alt="" />
+                    <figcaption>Black & White</figcaption>
+                </figure>
+            </ImageGalleryCards>
+        </ImageGalleryContainer>
     )
 }
 

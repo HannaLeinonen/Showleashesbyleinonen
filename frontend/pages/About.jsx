@@ -29,6 +29,9 @@ const HeadingImage = styled.div`
     h1 {
         font-size: 70px;
     }
+    h4 {
+        font-family: "Dancing Script", cursive;
+    }
 
     h1,
     h4 {
@@ -36,6 +39,10 @@ const HeadingImage = styled.div`
         z-index: 1;
         overflow-y: hidden;
         text-align: center;
+    }
+
+    @media only screen and (max-width: 768px) {
+        height: 35vh;
     }
 `
 const Main = styled.main`
@@ -52,7 +59,7 @@ const Main = styled.main`
     .text-1 {
         grid-column: 1/6;
     }
-    .text-2 {
+    .img-card-1 {
         grid-column: 1/2;
         grid-row: 2;
     }
@@ -89,6 +96,19 @@ const Main = styled.main`
         padding: 12px;
         backdrop-filter: blur(6px);
     }
+
+    @media only screen and (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        p {
+            padding: 1rem;
+            line-height: 2;
+        }
+        figure.card {
+            width: 95vw;
+        }
+    }
 `
 
 function About() {
@@ -114,10 +134,10 @@ function About() {
                         utställningskoppel och halsband.
                     </p>
                 </section>
-                <aside className="text-2">
+                <aside className="img-card-1">
                     <figure className="card">
-                        <img src="img\blått-koppel-400px.jpg" alt="" />
-                        <figcaption>Blue & White</figcaption>
+                        <img src="img\nougat-koppel-250px.JPG" alt="" />
+                        <figcaption>Nougat & White</figcaption>
                     </figure>
                 </aside>
                 <section className="text-3">
@@ -142,7 +162,10 @@ function About() {
                         starkare hundar. Lädret behandlas innan och efter
                         flätning för bästa vårdnad med balsam för läder som även
                         ger extra skydd för sol och vatten, de rullas även ut
-                        för att få en mjukare avslutning. Satinsnöre flätas i 4,
+                        för att få en mjukare avslutning. {' '}
+                    </p>
+                    <p>
+                        Satinsnöre flätas i 4,
                         6 eller 8-flätning och halsband till de mindre hundarna
                         kan flätas i 2-flätning om så önskas. Hakar och O-ringar
                         finns i Silver, Guld, Rosé guld, Svart och Oljefärgad,
@@ -150,8 +173,7 @@ function About() {
                         Halvstrypkedjor finns i Silver (XS, S & M), Guld (S & M)
                         och Svart (M). Finns även Snake halvstryp (S) Ditt paket
                         fraktas via postnord och är spårbart för att du ska
-                        kunna följa din beställning hela vägen till din dörr!{' '}
-                    </p>
+                        kunna följa din beställning hela vägen till din dörr!</p>
                 </section>
             </Main>
         </AboutContainer>

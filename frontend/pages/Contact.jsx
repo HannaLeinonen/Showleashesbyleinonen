@@ -40,6 +40,10 @@ const HeadingImage = styled.div`
         overflow-y: hidden;
         text-align: center;
     }
+
+    @media only screen and (max-width: 768px) {
+        height: 35vh;
+    }
 `
 const SocialMediaLinks = styled.div`
     display: flex;

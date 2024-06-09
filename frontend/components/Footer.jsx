@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
@@ -27,7 +28,7 @@ const FooterContainer = styled.footer`
         text-decoration: none;
 
         &:hover {
-            color: var(--three);
+            color: var(--one);
             border: 1px solid var(--three);
         }
     }
@@ -66,7 +67,9 @@ function Footer() {
             <div>
                 <h1>Beställ ditt nya koppel & halsband!</h1>
             </div>
-            <button>Kontakta oss</button>
+            <Link to="/contact">
+                            <button>Kontakta oss</button>
+                        </Link>
 
             <SocialMediaLinks>
                 <ul className="flex-container">

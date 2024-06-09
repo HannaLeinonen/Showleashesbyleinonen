@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import styled from 'styled-components'
-//import axios from 'axios';
+import axios from 'axios';
 import Modal from './Modal.jsx'
 
-// Valideringsschema med Yup
+// Validation with Yup
 const validationSchema = Yup.object({
     firstName: Yup.string()
         .max(50, 'Max 50 tecken')
@@ -14,7 +14,7 @@ const validationSchema = Yup.object({
         .max(50, 'Max 50 tecken')
         .required('Efternamn är obligatoriskt'),
     email: Yup.string()
-        .email('Ogiltig e-postadress') // Lägg till e-postvalidering
+        .email('Ogiltig e-postadress')
         .required('E-post är obligatoriskt'),
     message: Yup.string()
         .max(500, 'Max 500 tecken')
@@ -33,12 +33,17 @@ const Container = styled.div`
 const StyledForm = styled(Form)`
     display: flex;
     flex-direction: column;
-    max-width: 20vw;
+    width: 35vw;
     margin: auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color: #f9f9f950;
+
+
+    @media only screen and (max-width: 768px) {
+        width: 95vw;
+    }
 `
 
 const StyledDiv = styled.div`
@@ -103,12 +108,12 @@ const ContactForm = () => {
                 }}
                 validationSchema={validationSchema}
                 onSubmit={async (values, { setSubmitting, resetForm }) => {
-                    // Logga värdena innan de skickas
-                    console.log('Form values before submitting:', values)
 
-                    try {/*
-                        const response = await axios.post('http://localhost:10000/contact', values); */
-                        console.log('Message sent: ')
+                    console.log(values)
+
+                    try {
+                        const response = await axios.post('http://localhost:10000/contact', values);
+                        console.log('Message sent: ', response)
                         setModalMessage('Ditt meddelande har mottagits!')
                         setModalOpen(true)
                         resetForm()

@@ -37,16 +37,26 @@
     transition: ease 0.4s;
 }
 
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
 
 
 @media only screen and (max-width: 768px) {
     .navbar {
-        height: max-content;
+        height: 30vh;
+        padding-bottom: 2rem;
     }
     .navbar-nav {
         margin-top: 0;
     }
     #brandName > a {
         font-size: 1.4rem;
+    }
+    .navbar-link {
+        padding-bottom: 0.1rem;
     }
 }

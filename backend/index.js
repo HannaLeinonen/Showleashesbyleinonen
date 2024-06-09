@@ -37,16 +37,38 @@ app.post('/contact', async (req, res) => {
     }
 });
 
+
 // Endpoint för att hämta prislistan
 app.get('/pricelist', async (req, res) => {
   try {
-    const result = await client.query('SELECT * FROM pricelist');
-    res.json(result.rows);
+    const result = await client.query('SELECT * FROM pricelist WHERE braid_id=1 AND hook_id=1');
+
+    res.status(200).json(result.rows)
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+
+});
+
+app.get('/lengths', async (req, res) => {
+  try {
+    const result = await client.query('SELECT * FROM lengths');
+    res.status(200).json(result.rows)
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
   }
 });
+app.get('/colors', async (req, res) => {
+    try {
+      const result = await client.query('SELECT * FROM colors');
+      res.json(result.rows);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server Error');
+    }
+  });
 
 app.use(express.static(path.join(path.resolve(), 'dist')))
 
